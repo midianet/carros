@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       child: Scaffold(
         appBar: AppBar(
           title: Text('Coleção de Carros'),
+          centerTitle: true,
           bottom: TabBar(
             indicatorSize: TabBarIndicatorSize.label,
             labelStyle: TextStyle(fontSize: 12),
@@ -37,8 +38,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   _body() {
     return TabBarView(
       children: <Widget>[
-        CarrosPage.tipo(Carro.ESPORTIVOS),
-        CarrosPage.tipo(Carro.CLASSICOS),
+        CarrosPage.tipo(Carro.ESPORTIVO),
+        CarrosPage.tipo(Carro.CLASSICO),
         CarrosPage.tipo(Carro.LUXO),
         FavoritosPage(),
       ],

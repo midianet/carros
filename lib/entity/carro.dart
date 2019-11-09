@@ -3,9 +3,9 @@ import 'dart:convert' as convert;
 import 'package:carros/entity/entity.dart';
 
 class Carro extends Entity {
-  static final String CLASSICOS = "classicos";
-  static final String ESPORTIVOS = "esportivos";
-  static final String LUXO = "luxo";
+  static final String CLASSICO = "CLASSICO";
+  static final String ESPORTIVO = "ESPORTIVO";
+  static final String LUXO = "LUXO";
 
   int id;
   String nome;
@@ -15,10 +15,10 @@ class Carro extends Entity {
   String urlVideo;
   String latitude;
   String longitude;
-  int peso = 1070;
-  int velocidade = 187;
-  int potencia = 180;
-  int ranking = 8;
+  int peso;
+  int velocidade;
+  int potencia;
+  int ranking;
 
   Carro.fromMap(Map<String, dynamic> map) {
     id = map['id'];
@@ -29,6 +29,10 @@ class Carro extends Entity {
     urlVideo = map['urlVideo'];
     latitude = map['latitude'];
     longitude = map['longitude'];
+    peso = map['peso'];
+    velocidade  = map['velocidade'];;
+    potencia = map['potencia'];
+    ranking = map['ranking'];
   }
 
   String toJson() {
@@ -45,6 +49,10 @@ class Carro extends Entity {
     data['latitude'] = this.latitude;
     data['urlVideo'] = this.urlVideo;
     data['longitude'] = this.longitude;
+    data['velocidade'] = this.velocidade;
+    data['potencia'] = this.potencia;
+    data['peso'] = this.peso;
+    data['ranking'] = this.ranking;
     return data;
   }
 
