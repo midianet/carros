@@ -14,7 +14,6 @@ class FavoritosPage extends StatefulWidget {
 
 class _FavoritoPageViewState extends State<FavoritosPage> with AutomaticKeepAliveClientMixin<FavoritosPage> {
 
-
   @override
   bool get wantKeepAlive => true;
 
@@ -33,7 +32,7 @@ class _FavoritoPageViewState extends State<FavoritosPage> with AutomaticKeepAliv
         if(snapshot.hasError) return Center(child: Text("Não foi possível listar favoritos", style: TextStyle(color: Colors.red)));
         if(!snapshot.hasData) return Center(child: CircularProgressIndicator());
         List<Carro> carros = snapshot.data;
-        if(carros.isEmpty) return Center(child: Text("Você não tem nenhum carro  favorito"));
+        if(carros.isEmpty) return Center(child: Text("Você não tem nenhum carro  favorito",  style: TextStyle(fontSize: 18,color: Colors.red), ));
         return Container(
           padding: EdgeInsets.only(left: 14, right: 14),
           child: RefreshIndicator(

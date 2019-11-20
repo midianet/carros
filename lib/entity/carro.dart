@@ -1,4 +1,5 @@
 import 'dart:convert' as convert;
+import 'dart:io';
 
 import 'package:carros/entity/entity.dart';
 
@@ -57,7 +58,10 @@ class Carro extends Entity {
   }
 
   String get foto {
-    if (urlFoto != null) return urlFoto;
+    if (urlFoto != null) {
+      final String host = Platform.isAndroid ? "10.0.2.2" : "localhost";
+      return  'http://$host:8080/imagens?nome=$urlFoto';
+    }
     return "assets/images/carro.jpg";
   }
 }
