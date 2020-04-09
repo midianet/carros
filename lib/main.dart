@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         Provider<FavoritoBloc>(
-          builder: (context) => FavoritoBloc(),
+          create: (context) => FavoritoBloc(),
           dispose: (context, bloc) => bloc.dispose(),
         )
       ],

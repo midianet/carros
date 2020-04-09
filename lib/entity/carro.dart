@@ -2,6 +2,7 @@ import 'dart:convert' as convert;
 import 'dart:io';
 
 import 'package:carros/entity/entity.dart';
+import 'package:carros/utils/constants.dart';
 
 class Carro extends Entity {
   static final String CLASSICO = "CLASSICO";
@@ -59,8 +60,8 @@ class Carro extends Entity {
 
   String get foto {
     if (urlFoto != null) {
-      final String host = Platform.isAndroid ? "10.0.2.2" : "localhost";
-      return  'http://$host:8080/imagens?nome=$urlFoto';
+      final String host = apiUrl();
+      return  'http://$host/imagens?nome=$urlFoto';
     }
     return "assets/images/carro.jpg";
   }

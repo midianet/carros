@@ -12,8 +12,7 @@ class CarrosPage extends StatefulWidget {
   _CarrosPageState createState() => _CarrosPageState();
 }
 
-class _CarrosPageState extends State<CarrosPage>
-    with AutomaticKeepAliveClientMixin<CarrosPage> {
+class _CarrosPageState extends State<CarrosPage> with AutomaticKeepAliveClientMixin<CarrosPage> {
   final _block = CarroBloc();
 
   String get tipo => widget.tipo;
